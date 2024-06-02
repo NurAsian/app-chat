@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Chat</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bootstrap@5.3.3/bootstrap.min.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-chat">
+    <div class="recent-chat">
+      <span class="recent-chat-head"><i class="fa-duotone fa-comments"></i> ประวัติการสนทนา</span>
+      <form onsubmit="searchFunction()">
+        <div class="form-input-chat">
+          <input type="search" placeholder="ค้นหา..." id="search-input" oninput="searchFunction()">
+          <button type="submit" class="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
+      <div class="recent-history-chat">
+        <div class="recent-history" id="chat-list">
+          <div class="chat-history" data-name="ธรรมิกา วัชรสรรค์" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-1.png" data-text="สวัสดี! วันนี้เป็นอย่างไรบ้าง?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-1.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ธรรมิกา จรัสธรรม</span>
+              <span class="user-chat-text">สวัสดี! วันนี้เป็นอย่างไรบ้าง?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+        
+          <div class="chat-history" data-name="โสพล มาลัยแก้ว" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-2.png" data-text="อย่าลืมประชุมของเราตอนบ่ายสามนะ">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-2.png">
+            <div class="user-chat">
+              <span class="user-chat-name">โสพล มาลัยแก้ว</span>
+              <span class="user-chat-text">อย่าลืมประชุมของเราตอนบ่ายสามนะ</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="ภคพล วรวงศ์คุณากร" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-3.png" data-text="สุขสันต์วันเกิด! ขอให้เป็นวันที่ดี!">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-3.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ภคพล วรวงศ์คุณากร</span>
+              <span class="user-chat-text">สุขสันต์วันเกิด! ขอให้เป็นวันที่ดี!</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="ชมพูนุท เรืองรังสรรค์" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-4.png" data-text="ช่วยส่งรายงานให้ฉันภายในวันพรุ่งนี้ได้ไหม?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-4.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ชมพูนุท เรืองรังสรรค์</span>
+              <span class="user-chat-text">ช่วยส่งรายงานให้ฉันภายในวันพรุ่งนี้ได้ไหม?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="วิมลวรรณ แก้วมาลา" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-5.png" data-text="ฉันจะถึงที่นั่นใน 10 นาที">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-5.png">
+            <div class="user-chat">
+              <span class="user-chat-name">วิมลวรรณ แก้วมาลา</span>
+              <span class="user-chat-text">ฉันจะถึงที่นั่นใน 10 นาที</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="นรียา ห้าวหาญ" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-6.png" data-text="ขอบคุณสำหรับความช่วยเหลือของคุณเมื่อเช้า">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-6.png">
+            <div class="user-chat">
+              <span class="user-chat-name">นรียา ห้าวหาญ</span>
+              <span class="user-chat-text">ขอบคุณสำหรับความช่วยเหลือของคุณเมื่อเช้า</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="ปัณยตา ศิริธารา" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-7.png" data-text="เราไปดื่มกาแฟกันดีไหมสักวัน?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-7.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ปัณยตา ศิริธารา</span>
+              <span class="user-chat-text">เราไปดื่มกาแฟกันดีไหมสักวัน?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="สุรพงษ์ วงศ์วริศธารา" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-8.png" data-text="สุดสัปดาห์นี้คุณว่างไหม?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-8.png">
+            <div class="user-chat">
+              <span class="user-chat-name">สุรพงษ์ วงศ์วริศธารา</span>
+              <span class="user-chat-text">สุดสัปดาห์นี้คุณว่างไหม?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="รัชชานนท์ กิตติภัทรา" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-9.png" data-text="หากต้องการความช่วยเหลืออะไรบอกฉันได้เลยนะ">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-9.png">
+            <div class="user-chat">
+              <span class="user-chat-name">รัชชานนท์ กิตติภัทรา</span>
+              <span class="user-chat-text">หากต้องการความช่วยเหลืออะไรบอกฉันได้เลยนะ</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="นีรยา ศิริวิชยาพร" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-10.png" data-text="ขอบคุณมากสำหรับความคิดเห็นของคุณ">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-10.png">
+            <div class="user-chat">
+              <span class="user-chat-name">นีรยา ศิริวิชยาพร</span>
+              <span class="user-chat-text">ขอบคุณมากสำหรับความคิดเห็นของคุณ</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="ธาวัลย์ ศรีทรัพย์โกศล" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-11.png" data-text="เราสามารถเปลี่ยนเวลานัดได้ไหม?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-11.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ธาวัลย์ ศรีทรัพย์โกศล</span>
+              <span class="user-chat-text">เราสามารถเปลี่ยนเวลานัดได้ไหม?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="ขวัญจิรา จันทรเกียรติ" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-12.png" data-text="โชคดีนะกับการนำเสนอของคุณ!">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-12.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ขวัญจิรา จันทรเกียรติ</span>
+              <span class="user-chat-text">โชคดีนะกับการนำเสนอของคุณ!</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="กิตติญา กาญจนมาศ" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-13.png" data-text="คุณมีร้านอาหารแนะนำสำหรับมื้อเย็นไหม?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-13.png">
+            <div class="user-chat">
+              <span class="user-chat-name">กิตติญา กาญจนมาศ</span>
+              <span class="user-chat-text">คุณมีร้านอาหารแนะนำสำหรับมื้อเย็นไหม?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="ธีรยา ลือขำ" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-16.png" data-text="ฉันจะส่งรายละเอียดให้เร็วๆ นี้">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-16.png">
+            <div class="user-chat">
+              <span class="user-chat-name">ธีรยา ลือขำ</span>
+              <span class="user-chat-text">ฉันจะส่งรายละเอียดให้เร็วๆ นี้</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="อภิญญา ธงชัย" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-14.png" data-text="คุณช่วยยืนยันเวลาว่างของคุณได้ไหม?">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-14.png">
+            <div class="user-chat">
+              <span class="user-chat-name">อภิญญา ธงชัย</span>
+              <span class="user-chat-text">คุณช่วยยืนยันเวลาว่างของคุณได้ไหม?</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="กิตติธร มงคงมั่น" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-15.png" data-text="ขอบคุณที่เข้าใจนะ">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-15.png">
+            <div class="user-chat">
+              <span class="user-chat-name">กิตติธร มงคงมั่น</span>
+              <span class="user-chat-text">ขอบคุณที่เข้าใจนะ</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+          
+          <div class="chat-history" data-name="วรันธร วัชรโสภณ" data-img="https://cdn.jsdelivr.net/gh/JacketJK/image/user-17.png" data-text="พรุ่งนี้ฉันจะทำงานที่บ้านนะ">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-17.png">
+            <div class="user-chat">
+              <span class="user-chat-name">วรันธร วัชรโสภณ</span>
+              <span class="user-chat-text">พรุ่งนี้ฉันจะทำงานที่บ้านนะ</span>
+            </div>
+            <div class="status-chat">
+              <span class="status"><i class="fa-solid fa-circle"></i></span>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+    <div class="body-chat">
+      <div class="body-chat-app">
+        <div class="body-chat-head">
+          <div class="head-active">
+            <img src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-17.png" id="active-user-img">
+            <span id="active-user-name">Jakkrit Wangsuk</span>
+          </div>
+        </div>
+        <div class="body-chat-taxt">
+          <div class="rander-chat" id="chat-messages">
+            <div class="chat-incoming">
+              <img class="user" src="https://cdn.jsdelivr.net/gh/JacketJK/image/user-17.png">
+              <div class="chat-bubble">
+                <span>สวัสดีครับ</span>
+              </div>
+            </div>
+            
+            <div class="chat-outcoming">
+              <div class="chat-bubble">
+                <span>สอบถามเรื่องอะไรดีครับ</span>
+              </div>
+              <img class="user" src="https://cdn.jsdelivr.net/gh/JacketJK/upload/DR-Samit_Chone.png">
+            </div>
+     
+          </div>
+        </div>
+        <div class="body-chat-input">
+          <form id="chat-form">
+            <input type="text" placeholder="พิมพ์ข้อความ" id="chat-input">
+            <button type="submit"><i class="fa-duotone fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>  
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="bootstrap@5.3.3/bootstrap.bundle.min.js"></script>
+</body>
+</html>
